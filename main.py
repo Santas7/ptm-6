@@ -1,5 +1,6 @@
 import logging
 import csv
+import cProfile
 
 
 class ShopInventory:
@@ -137,7 +138,8 @@ class ShopInventory:
         self.inventory = []
         self.logger.info("Инвентарь очищен.")
 
-if __name__ == "__main__":
+
+def main():
     try:
         shop = ShopInventory()
         shop.add_item("Книга")
@@ -159,3 +161,7 @@ if __name__ == "__main__":
         shop.count_items()
     except Exception as e:
         logging.exception("Произошла ошибка", exc_info=True)
+
+
+if __name__ == "__main__":
+    cProfile.run("main()", sort="cumulative")
