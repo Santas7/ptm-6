@@ -7,7 +7,7 @@ import cProfile
 
 class ShopInventory:
     def __init__(self) -> None:
-        self.inventory = []
+        self.inventory = set()
         self.logger = self.setup_logger()
 
     def setup_logger(self):
@@ -25,7 +25,7 @@ class ShopInventory:
         return logger
 
     async def add_item(self, item: str) -> None:
-        self.inventory.append(item)
+        self.inventory.add(item)
         self.logger.info(f"Добавлен товар: {item}")
 
     async def remove_item(self, item: str) -> None:
