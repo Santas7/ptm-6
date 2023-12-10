@@ -137,7 +137,7 @@ class ShopInventory:
 
 
 if __name__ == "__main__":
-    async def main_async():
+    async def main_async() -> None:
         try:
             shop = ShopInventory()
             await shop.add_item("Книга")
